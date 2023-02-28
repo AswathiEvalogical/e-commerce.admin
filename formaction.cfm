@@ -9,7 +9,7 @@ CFSQLType="CF_SQL_VARCHAR">
 </cfquery>
 
 
-
+  
 <cfif userdata.RecordCount>
    
     <cfoutput query="userdata">

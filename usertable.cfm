@@ -4,27 +4,21 @@
   <!-- Theme style -->
   <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
   
-  <cfquery name="getMovies" datasource="Entertainment">
-    select top 4 movieName
-    from Movies
-  </cfquery>
-  <cfloop query="getMovies">
-     #movieName#
-  </cfloop>
-
+  
 
   
 <div class="card-body">
     <table class="table table-bordered">
       <thead>
         <tr>
-          <th style="width: 10px">#</th>
+          <!---<th style="width: 10px">#</th>--->
           <th>FirstName</th>
           <th>LastName</th>
-          <th style="width: 40px">password</th>
+          <th>Password</th>
+         <!--- <th style="width: 40px">password</th>--->
         </tr>
       </thead>
-      <tbody>
+     <!--- <tbody>
 
 
         <tr>
@@ -36,6 +30,21 @@
           <td>gfhjy</td>
         </tr>
        
-      </tbody>
+      </tbody>--->
+
+      <cfquery name="selectqr" datasource="ecommerce">
+        select FirstName,LastName,password from login;
+      </cfquery>
+      <cfloop query="selectqr">
+        <cfoutput>
+          <tr>
+         <td>#FirstName#</td>
+         <td>#LastName#</td>
+         <td>#password#</td>
+
+        </tr>
+        </cfoutput>
+      </cfloop>
+    
     </table>
   </div>
